@@ -17,7 +17,7 @@
                               Pendapatan Hari ini</div>
                            <div class="h2 mb-0 font-weight-bold text-light">Rp.<?php
                                                                                  if (!empty($harian)) {
-                                                                                    echo number_format($harian);
+                                                                                    echo number_format($harian, 0, ',', '.');
                                                                                  } else {
                                                                                     echo '0';
                                                                                  }
@@ -36,7 +36,12 @@
                         <div class="col mr-2">
                            <div class="text-md font-weight-bold text-light text-uppercase mb-1">
                               Pendapatan bulan Ini</div>
-                           <div class="h2 mb-0 font-weight-bold text-light">Rp.<?= number_format($bulanan, 0, ',', '.'); ?></div>
+                           <div class="h2 mb-0 font-weight-bold text-light">Rp.<?php
+                                                                                 if (!empty($bulanan)) {
+                                                                                    echo number_format($bulanan, 0, ',', '.');
+                                                                                 } else {
+                                                                                    echo '0';
+                                                                                 } ?></div>
                         </div>
                      </div>
                   </div>
@@ -54,7 +59,12 @@
                                                 use CodeIgniter\HTTP\Request;
 
                                                 echo date('Y'); ?></div>
-                           <div class="h2 mb-0 font-weight-bold text-light">Rp.<?= number_format($tahunan, 0, ',', '.'); ?></div>
+                           <div class="h2 mb-0 font-weight-bold text-light">Rp.<?php
+                                                                                 if (!empty($tahunan)) {
+                                                                                    echo number_format($tahunan, 0, ',', '.');
+                                                                                 } else {
+                                                                                    echo '0';
+                                                                                 } ?></div>
                         </div>
 
                      </div>
@@ -69,7 +79,12 @@
                         <div class="col mr-2">
                            <div class="text-md font-weight-bold text-light text-uppercase mb-1">
                               Pendapatan Keseluruhan</div>
-                           <div class="h2 mb-0 font-weight-bold text-light">Rp.<?= number_format($total, 0, ',', '.'); ?></div>
+                           <div class="h2 mb-0 font-weight-bold text-light">Rp.<?php
+                                                                                 if (!empty($total)) {
+                                                                                    echo number_format($total, 0, ',', '.');
+                                                                                 } else {
+                                                                                    echo '0';
+                                                                                 } ?></div>
                         </div>
                      </div>
                   </div>
